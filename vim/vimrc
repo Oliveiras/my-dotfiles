@@ -1,0 +1,5 @@
+" AROLIVEIRA'S VIM CONFIG FILE
+
+source ~/.vim/shared.basic.vim
+source ~/.vim/shared.mappings.vim
+
