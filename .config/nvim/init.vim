@@ -1,0 +1,1 @@
+/home/alex/.config/vim/neovim.init.vim
