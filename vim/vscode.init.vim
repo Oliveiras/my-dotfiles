@@ -1,8 +1,4 @@
-" AROLIVEIRA'S VSCODE-NEOVIM CONFIG FILE
-
-" Configure path
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
+" AROLIVEIRA'S VSCODEVIM CONFIG FILE
 
 " Import configs
 source ~/.vim/shared.basic.vim
@@ -19,5 +15,4 @@ source ~/.vim/vscode.plugins.vim
 
 " End plugins section
 call plug#end()
-
 

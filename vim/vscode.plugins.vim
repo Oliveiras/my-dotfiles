@@ -1,4 +1,4 @@
-" AROLIVEIRA'S SELECTED PLUGINS FOR VSCODE-NEOVIM
+" AROLIVEIRA'S SELECTED PLUGINS FOR VSCODEVIM
 
 " NOTE: You should import this file inside a Plug section.
 
