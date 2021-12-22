@@ -12,9 +12,9 @@ set ideastatusicon=enabled
 
 """""""""""""""""""" PLUGINS """"""""""""""""""""
 
-source ~/.vim/basic.vim
-source ~/.vim/mappings.vim
-source ~/.vim/plugins.vim
+source ~/.config/vim/basic.vim
+source ~/.config/vim/mappings.vim
+source ~/.config/vim/plugins.vim
 
 set surround
 set multiple-cursors
