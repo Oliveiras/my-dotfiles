@@ -1,5 +1,0 @@
-" AROLIVEIRA'S VIM CONFIG FILE
-
-source ~/.config/vim/shared.basic.vim
-source ~/.config/vim/shared.mappings.vim
-
