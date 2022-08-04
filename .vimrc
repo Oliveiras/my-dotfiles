@@ -2,7 +2,7 @@
 
 " URL to download my plugin (better-defaults)
 let plug_url = 'https://raw.githubusercontent.com/Oliveiras/vim-better-defaults/main/plugin/better-defaults.vim'
-let plug_dir = expand('~/.config/vim/plugins/')
+let plug_dir = expand('~/.vim/plugins/')
 let plug_file = plug_dir . 'better-defaults.vim'
 
 " Create plugins dir and download my plugin
