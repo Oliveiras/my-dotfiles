@@ -26,5 +26,5 @@ test -f ~/.bash_aliases    && source ~/.bash_aliases    # useful aliases
 test -f ~/.bash_local      && source ~/.bash_local      # put your own stuff here, so you can update this file safely
 
 # Show a very informative prompt command
-PS1='\[\e]0;\W\a\] \[\e[31m\]`__last_cmd_exit` \[\e[34m\]\n\t \[\e[32m\]\u@\h \[\e[33m\]\w \[\e[36m\]`__git_branch_current` \[\e[90m\]\n\$ \[\e[0m\]\[$(tput sgr0)\]'
+PS1='\[\e]0;\W\a\] \[\e[31m\]`__last_cmd_exit` \[\e[34m\]\n\t \[\e[32m\]\u@\h \[\e[35m\]$OSTYPE \[\e[33m\]\w \[\e[36m\]`__git_branch_current` \[\e[90m\]\n\$ \[\e[0m\]\[$(tput sgr0)\]'
 
