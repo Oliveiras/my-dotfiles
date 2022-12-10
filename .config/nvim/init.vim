@@ -7,7 +7,12 @@
 set termguicolors
 
 " Backgroud color matching the terminal one
-set background=light
+"set background=light
+
+" Import vimrc
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
 
 " }}}
 
@@ -61,12 +66,6 @@ Plug 'tpope/vim-commentary'
 " Basic tmux support for Vim (:Tmux :Tyank :Tput :Twrite :Tattach).
 Plug 'tpope/vim-tbone'
 
-" Navigate between vim splits and tmux panes (<C-h> <C-j> <C-k> <C-l> <C-\>)
-Plug 'christoomey/vim-tmux-navigator'
-
-" Run command in small tmux pane at bottom (:VimuxRunCommand :VimuxRunLastCommand)
-Plug 'preservim/vimux'
-
 " Git plugin (:Git :GMove :GRename :GDelete :GBrowse)
 Plug 'tpope/vim-fugitive'
 
@@ -86,8 +85,6 @@ let g:argtextobj_pairs="[:],(:),<:>"
 
 " Align tabular text (ga)
 Plug 'junegunn/vim-easy-align'
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " Multiple cursors (<C-n> <C-x> <C-p> g<C-n>)
 Plug 'terryma/vim-multiple-cursors'
@@ -109,20 +106,9 @@ let g:EasyMotion_startofline = 0
 " Open browser on given URL
 Plug 'tyru/open-browser.vim'
 
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-" Markdown support
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-" PlantUML support
-Plug 'aklt/plantuml-syntax'
-Plug 'weirongxu/plantuml-previewer.vim'
-
 " Color scheme
-Plug 'NLKNguyen/papercolor-theme'
-autocmd vimenter * colorscheme PaperColor
+"Plug 'NLKNguyen/papercolor-theme'
+"autocmd vimenter * colorscheme PaperColor
 
 " End plugins section
 call plug#end()
@@ -131,50 +117,17 @@ call plug#end()
 
 " MAPPINGS {{{
 " ------------------------------------------------------------------------------
-" Not using: F t T ; : Ç S
 
-" Map <Leader> and <LocalLeader>
-let mapleader=' '
-let maplocalleader=','
-
-" Interaction with the clipboard
-nnoremap <Leader>d      "*d
-xnoremap <Leader>d      "*d
-nnoremap <Leader>D      "*D
-nnoremap <Leader>y      "*y
-xnoremap <Leader>y      "*y
-nnoremap <Leader>Y      "*y$
-nnoremap <Leader>p      "*p
-xnoremap <Leader>p      "*p
-nnoremap <Leader>P      "*P
+" Replace with register
 nnoremap <Leader>gr     "*gr
 xnoremap <Leader>gr     "*gr
 
-" Simulate common Windows keybindings
-xnoremap <C-x>          "*d
-xnoremap <C-c>          "*y
-xnoremap <C-v>          "*P
-nnoremap <C-v>          "*P
-inoremap <C-v>          <C-r>*
-nnoremap <C-s>          :w<CR>
-inoremap <C-s>          <C-o>:w<CR>
+" Easymotion
+map <Leader>s           <Plug>(easymotion-s)
 
-" Avoid reaching Esc
-inoremap ç              <Esc>
-inoremap \ç             ç
-nnoremap ã              açã
-nnoremap õ              açõ
-inoremap <F4>ç          <C-o>:inoremap ç 
-
-" Commonly used commands on easier keys
-nnoremap q              :bd<CR>
-nnoremap \q             q
-nnoremap <Leader>q      :q<CR>
-map f                   <Plug>(easymotion-s)
-nnoremap \f             f
-nnoremap s              <C-w>
-nnoremap \s             s
-nnoremap ç              :
+" Easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " FZF
 nnoremap <Leader>f/  :Ag<Space>

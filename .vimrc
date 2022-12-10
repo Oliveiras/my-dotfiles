@@ -11,6 +11,9 @@ if has('unix') && ! filereadable(plug_file)
 	exe "!curl -k " . plug_url . " --output " . plug_file
 endif
 
+" Clear possible statusline
+let &statusline=''
+
 " Source my plugin
 if filereadable(plug_file)
 	exe "source " . plug_file
@@ -32,11 +35,6 @@ xnoremap <Leader>p      "*p
 nnoremap <Leader>P      "*P
 
 " Simulate common Windows keybindings
-xnoremap <C-x>          "*d
-xnoremap <C-c>          "*y
-xnoremap <C-v>          "*P
-nnoremap <C-v>          "*P
-inoremap <C-v>          <C-r>*
 nnoremap <C-s>          :w<CR>
 inoremap <C-s>          <C-o>:w<CR>
 
