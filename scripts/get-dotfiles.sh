@@ -3,7 +3,7 @@
 if ! command -v curl || ! command -v vim; then
 	if   command -v apt; then apt update && apt install -y curl vim
 	elif command -v yum; then yum install -y curl vim
-	elif command -v apk; then apk add curl vim
+	elif command -v apk; then apk add curl vim bash
 	else                      >&2 echo 'Unknown distro'
 	fi
 fi
