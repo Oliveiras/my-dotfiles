@@ -41,6 +41,7 @@ inoremap <C-s>          <C-o>:w<CR>
 " Avoid reaching Esc
 inoremap ç              <Esc>
 inoremap \ç             ç
+nnoremap ç              aç
 nnoremap ã              açã
 nnoremap õ              açõ
 
@@ -50,5 +51,4 @@ nnoremap \q             q
 nnoremap <Leader>q      :q<CR>
 nnoremap s              <C-w>
 nnoremap \s             s
-nnoremap ç              :
 

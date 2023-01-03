@@ -1,0 +1,73 @@
+" ALEX'S IDEAVIM CONFIG FILE
+
+"""""""""""""""""""" COMPATIBILITY """"""""""""""""""""
+
+source ~/.vimrc
+
+"""""""""""""""""""" IDEAVIM SETTINGS """"""""""""""""""""
+
+set ideajoin
+set ideastatusicon=enabled
+
+"""""""""""""""""""" PLUGINS """"""""""""""""""""
+
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+"""""""""""""""""""" FIX MAPPINGS """"""""""""""""""""
+
+" Fix jump related
+nnoremap <C-o>       :action Back<CR>
+nnoremap <C-i>       :action Forward<CR>
+
+" Fix unimpaired related
+nnoremap [<Space>    mmO<Esc>`m
+nnoremap ]<Space>    mmo<Esc>`m
+
+"""""""""""""""""""" IDEAVIM MAPPINGS """"""""""""""""""""
+
+" Go To / Jump (under cursor)
+nnoremap ,gg         :action ShowUsages<CR>
+nnoremap ,gi         :action GotoImplementation<CR>
+nnoremap ,gt         :action GotoTypeDeclaration<CR>
+nnoremap ,gs         :action GotoSuperMethod<CR>
+nnoremap ,gu         :action GotoTest<CR>
+nnoremap ,ge         :action JumpToLastChange<CR>
+
+" Fix find related
+nnoremap ,ff         :action GotoFile<CR>
+nnoremap ,fd         :action GotoClass<CR>
+nnoremap ,f/         :action FindInPath<CR>
+nnoremap ,fb         :action RecentFiles<CR>
+nnoremap ,fh         :action RecentLocations<CR>
+nnoremap ,ft         :action GotoSymbol<CR>
+
+" Refactor code
+nnoremap ,rr         :action RefactoringMenu<CR>
+nnoremap ,rt         :action Refactorings.QuickListPopupAction<CR>
+xnoremap ,rt         :action Refactorings.QuickListPopupAction<CR>
+nnoremap ,ra         :action AnalyzeMenu<CR>
+nnoremap ,re         :action RenameElement<CR>
+nnoremap ,rm         :action Move<CR>
+nnoremap ,ri         :action Inline<CR>
+nnoremap ,rs         :action SurroundWith<CR>
+xnoremap ,rs         :action SurroundWith<CR>
+nnoremap ,rv         :action IntroduceVariable<CR>
+
+" Introspect code
+inoremap <C-q>       <C-o>:action QuickJavaDoc<CR>
+nnoremap ,ii         :action QuickActions<CR>
+nnoremap ,ip         :action ParameterInfo<CR>
+nnoremap ,iu         :action FindUsages<CR>
+nnoremap ,ic         :action CallHierarchy<CR>
+nnoremap ,im         :action MethodHierarchy<CR>
+nnoremap ,it         :action TypeHierarchy<CR>
+
+" Pending
+" Git related (Annotate, GitFileActions, GitRepositoryActions, Git.ResolveConflicts)
+" Debug related (Debug Stop GotoNextError ToggleLineBreakpoint)
