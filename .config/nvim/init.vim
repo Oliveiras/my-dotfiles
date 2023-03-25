@@ -19,6 +19,13 @@ source ~/.vimrc
 " PLUGINS {{{
 " ------------------------------------------------------------------------------
 
+" Download and install vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Start plugins section
 call plug#begin()
 
@@ -89,7 +96,7 @@ Plug 'terryma/vim-multiple-cursors'
 
 " Search for pattern in whole project (:Ack)
 Plug 'mileszs/ack.vim'
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'rg --vimgrep --smart-case'
 
 " Fuzzy find anything (:FZF)
 Plug 'junegunn/fzf'
@@ -128,7 +135,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " FZF
-nnoremap <Leader>f/  :Ag<Space>
+nnoremap <Leader>f/  :Rg<Space>
 nnoremap <Leader>ff  :Files<CR>
 nnoremap <Leader>fg  :GFiles<CR>
 nnoremap <Leader>fb  :Buffers<CR>
