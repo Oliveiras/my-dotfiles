@@ -23,16 +23,14 @@ alias o='xdg-open'
 
 # git
 alias g='git'
-alias gc='git clone'                            # clone <repo>
-alias gi='git init'                             # init
 alias gs='git status'                           # status
 alias gk='gitk --all'                           # GUI (readonly)
 alias gl='git log --oneline --graph'            # log
 alias glt='git log --tags --simplify-by-decoration --pretty="format:%<(16)%D - %h - %ar"'  # list tags
 alias glb='git branch --all'                    # list branchs
 alias ga='git add'                              # add <file>
-alias gr='git restore'                           # restore <file>
-alias gco='git commit -v'                       # commit
+alias gr='git restore'                          # restore <file>
+alias gc='git commit -v'                        # commit
 alias gcm='git commit -m'                       # commit <msg>
 alias gp='git push'                             # push
 alias gf='git pull --prune'                     # fetch + merge
