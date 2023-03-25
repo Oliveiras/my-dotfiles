@@ -31,6 +31,7 @@ alias gl='git log --oneline --graph'            # log
 alias glt='git log --tags --simplify-by-decoration --pretty="format:%<(16)%D - %h - %ar"'  # list tags
 alias glb='git branch --all'                    # list branchs
 alias ga='git add'                              # add <file>
+alias gr='git restore'                           # restore <file>
 alias gco='git commit -v'                       # commit
 alias gcm='git commit -m'                       # commit <msg>
 alias gp='git push'                             # push

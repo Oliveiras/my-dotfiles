@@ -1,22 +1,24 @@
-" ALEX'S VIMRC (SHARED WITH NVIM)
+" ALEX'S VIMRC
 
-" URL to download my plugin (better-defaults)
-let plug_url = 'https://raw.githubusercontent.com/Oliveiras/vim-better-defaults/main/plugin/better-defaults.vim'
-let plug_dir = expand('~/.config/vim/plugins/')
-let plug_file = plug_dir . 'better-defaults.vim'
+" Download and source my plugin (better-defaults)
+if has('unix')
 
-" Create plugins dir and download my plugin
-if has('unix') && ! filereadable(plug_file)
-	exe "!mkdir -p " . plug_dir
-	exe "!curl -k " . plug_url . " --output " . plug_file
-endif
+	" URL to download my plugin
+	let plug_url = 'https://raw.githubusercontent.com/Oliveiras/vim-better-defaults/main/plugin/better-defaults.vim'
+	let plug_dir = expand('~/.config/vim/plugins/')
+	let plug_file = plug_dir . 'better-defaults.vim'
 
-" Clear possible statusline
-let &statusline=''
+	" Create plugins dir and download my plugin
+	if ! filereadable(plug_file)
+		exe "!mkdir -p " . plug_dir
+		exe "!curl -k " . plug_url . " --output " . plug_file
+	endif
 
-" Source my plugin
-if filereadable(plug_file)
-	exe "source " . plug_file
+	" Source my plugin
+	if filereadable(plug_file)
+		exe "source " . plug_file
+	endif
+
 endif
 
 " Map <Leader> and <LocalLeader>
@@ -33,22 +35,31 @@ nnoremap <Leader>Y      "*y$
 nnoremap <Leader>p      "*p
 xnoremap <Leader>p      "*p
 nnoremap <Leader>P      "*P
+" replace with register
+nmap <Leader>gr         "*gr
+xmap <Leader>gr         "*gr
+" exchange
+nmap <Leader>cx         "*cx
+xmap <Leader>X          "*X
 
 " Simulate common Windows keybindings
 nnoremap <C-s>          :w<CR>
-inoremap <C-s>          <C-o>:w<CR>
-
-" Avoid reaching Esc
-inoremap ç              <Esc>
-inoremap \ç             ç
-nnoremap ç              aç
-nnoremap ã              açã
-nnoremap õ              açõ
+inoremap <C-s>          <Esc>:w<CR>
 
 " Commonly used commands on easier keys
-nnoremap q              :bd<CR>
 nnoremap \q             q
-nnoremap <Leader>q      :q<CR>
-nnoremap s              <C-w>
+nnoremap q              :bd<CR>
+nnoremap Q              :close<CR>
+nnoremap <Leader>q      :qa<CR>
 nnoremap \s             s
+nnoremap s              <C-w>
+nnoremap sn             :bn<CR>
+nnoremap sp             :bp<CR>
+
+" Simulate unimpaired
+nnoremap [<Space>       mmO<Esc>`m
+nnoremap ]<Space>       mmo<Esc>`m
+
+" My keybindings
+nnoremap <Leader>i      i <Left>
 

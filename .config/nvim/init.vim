@@ -27,8 +27,6 @@ Plug 'machakann/vim-highlightedyank'
 
 " Defaults almost everyone can agreee on
 Plug 'Oliveiras/vim-better-defaults'
-let g:default_statusline_left_separator = "  "
-let g:default_statusline_right_separator = "  "
 
 " Auto-adjust shiftwidth, expandtab and EditorConfig support
 Plug 'tpope/vim-sleuth'

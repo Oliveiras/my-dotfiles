@@ -1,8 +1,38 @@
-" ALEX'S IDEAVIM CONFIG FILE
+" ALEX'S IDEAVIMRC
 
 """""""""""""""""""" COMPATIBILITY """"""""""""""""""""
 
+" Load my vimrc
 source ~/.vimrc
+
+" Replicate my plugin settings
+set showcmd
+set showmode
+set number
+set wildmenu
+set wildignorecase
+set viminfo+=!
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set autoindent
+set smartindent
+set smarttab
+set scrolloff=1
+set sidescrolloff=5
+xnoremap < <gv
+xnoremap > >gv
+nnoremap Y y$
+xnoremap * "yy/<C-r>y<CR>
+xnoremap # "yy?<C-r>y<CR>
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
+nnoremap Q gq
+nnoremap <silent> <C-L> :noh<CR>
+set nrformats-=octal
+set nostartofline
+silent! set nojoinspaces
 
 """""""""""""""""""" IDEAVIM SETTINGS """"""""""""""""""""
 
@@ -14,20 +44,24 @@ set ideastatusicon=enabled
 set surround
 set multiple-cursors
 set commentary
-set argtextobj
-set easymotion
-set textobj-entire
 set ReplaceWithRegister
+let g:argtextobj_pairs="(:),{:},<:>"
+set argtextobj
+set exchange
+set textobj-entire
+set highlightedyank
+set vim-paragraph-motion
+set textobj-indent
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_primary_color = '#ff0000'
+let g:qs_secondary_color = '#ff00ff'
+set quickscope
 
 """""""""""""""""""" FIX MAPPINGS """"""""""""""""""""
 
 " Fix jump related
 nnoremap <C-o>       :action Back<CR>
 nnoremap <C-i>       :action Forward<CR>
-
-" Fix unimpaired related
-nnoremap [<Space>    mmO<Esc>`m
-nnoremap ]<Space>    mmo<Esc>`m
 
 """""""""""""""""""" IDEAVIM MAPPINGS """"""""""""""""""""
 
