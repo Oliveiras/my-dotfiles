@@ -16,6 +16,7 @@ if has('unix')
 
 	" Source my plugin
 	if filereadable(plug_file)
+		set statusline=
 		exe "source " . plug_file
 	endif
 

@@ -6,6 +6,7 @@
 source ~/.vimrc
 
 " Replicate my plugin settings
+set visualbell
 set showcmd
 set showmode
 set number
@@ -56,6 +57,8 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#ff0000'
 let g:qs_secondary_color = '#ff00ff'
 set quickscope
+set which-key
+set notimeout
 
 """""""""""""""""""" FIX MAPPINGS """"""""""""""""""""
 
