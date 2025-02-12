@@ -12,3 +12,8 @@ __complete_docker_names() {
 }
 
 complete -F __complete_docker_names dlo
+complete -F __complete_docker_names din
+complete -F __complete_docker_names dex
+complete -F __complete_docker_names dsto
+complete -F __complete_docker_names dre
+complete -F __complete_docker_names drm
