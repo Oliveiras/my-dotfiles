@@ -14,8 +14,10 @@ fi
 
 # Download new dotfiles
 curl -fLso ~/.bashrc https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.bashrc
+curl -fLso ~/.bash_profile https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.bash_profile
 curl -fLso ~/.bash_aliases https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.bash_aliases
 curl -fLso ~/.bash_functions https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.bash_functions
+curl -fLso ~/.bash_completions https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.bash_completions
 curl -fLso ~/.inputrc https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.inputrc
 curl -fLso ~/.vimrc https://raw.githubusercontent.com/Oliveiras/my-dotfiles/master/.vimrc
 
