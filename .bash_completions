@@ -1,0 +1,14 @@
+# ALEX'S BASH COMPLETIONS
+
+__complete_git_branches() {
+	COMPREPLY=($(compgen -W "$(__git_branch_list)" "${COMP_WORDS[1]}"))
+}
+
+complete -F __complete_git_branches gsw
+complete -F __complete_git_branches gme
+
+__complete_docker_names() {
+	COMPREPLY=($(compgen -W "$(__docker_ps_names)" "${COMP_WORDS[1]}"))
+}
+
+complete -F __complete_docker_names dlo

@@ -18,6 +18,21 @@ __git_branch_current() {
 
 # Show all git branches, except the current one
 # removes the remote name, ex: "remotes/origin/master" becomes "master"
-__git_branch_show_others() {
+__git_branch_list() {
 	git branch --all | while read b; do [[ ! $b =~ '*' && ! $b =~ '->' ]] && echo "${b//remotes\/origin\//}"; done | sort -u 2>/dev/null
 }
+
+# Smart Git commit, if called with params, dont open editor
+__git_commit() {
+	if [ $# -eq 0 ]; then
+		git commit -v
+	else
+		git commit -m "$@"
+	fi
+}
+
+# List only name of docker containers
+__docker_ps_names() {
+	docker ps --format '{{.Names}}'
+}
+

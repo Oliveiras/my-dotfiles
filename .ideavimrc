@@ -42,17 +42,19 @@ set ideastatusicon=enabled
 
 """""""""""""""""""" PLUGINS """"""""""""""""""""
 
+set NERDTree
 set surround
 set multiple-cursors
 set commentary
 set ReplaceWithRegister
-let g:argtextobj_pairs="(:),{:},<:>"
+let g:argtextobj_pairs="(:),[:],{:},<:>"
 set argtextobj
 set exchange
 set textobj-entire
 set highlightedyank
 set vim-paragraph-motion
 set textobj-indent
+set matchit
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#ff0000'
 let g:qs_secondary_color = '#ff00ff'
@@ -104,6 +106,7 @@ nnoremap ,iu         :action FindUsages<CR>
 nnoremap ,ic         :action CallHierarchy<CR>
 nnoremap ,im         :action MethodHierarchy<CR>
 nnoremap ,it         :action TypeHierarchy<CR>
+nnoremap ,id         :action QuickJavaDoc<CR>
 
 " Pending
 " Git related (Annotate, GitFileActions, GitRepositoryActions, Git.ResolveConflicts)

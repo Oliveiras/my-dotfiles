@@ -43,6 +43,12 @@ xmap <Leader>gr         "*gr
 nmap <Leader>cx         "*cx
 xmap <Leader>X          "*X
 
+" Avoid polluting registers
+nnoremap c              "_c
+nnoremap C              "_C
+nnoremap x              "_x
+nnoremap X              "_X
+
 " Simulate common Windows keybindings
 nnoremap <C-s>          :w<CR>
 inoremap <C-s>          <Esc>:w<CR>

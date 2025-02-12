@@ -13,89 +13,71 @@ alias ....='cd ../../..'
 
 # editor
 alias e='vim'
-
-# reader
+alias se='sudo vim'
 alias r='less'
+alias sr='sudo less'
 alias rf='less -nR +F'
-
-# open
-alias o='xdg-open'
+alias srf='sudo less -nR +F'
 
 # git
 alias g='git'
 alias gs='git status'                           # status
-alias gss='git stash --all'                     # stash save
-alias gsa='git stash apply'                     # stash apply
-alias gsd='git stash drop'                      # stash drop
 alias gk='gitk --all'                           # K (GUI)
-alias gl='git log --oneline --graph'            # log
+alias glo='git log --oneline --graph'           # log
 alias glt='git log --tags --simplify-by-decoration --pretty="format:%<(16)%D - %h - %ar"'  # list tags
 alias glb='git branch --all'                    # list branches
-alias gc='git commit -v'                        # commit
-alias gcm='git commit -m'                       # commit <message>
+alias gco='__git_commit'                        # commit
 alias gcl='git clone'                           # clone
 alias gchmod='git update-index --chmod=+x'      # chmod +x <file>
-alias gb='git switch'                           # switch branch <branch>
-alias gf='git pull --prune --rebase'            # fetch + rebase
+alias gsw='git switch'                          # switch branch <branch>
+alias gfr='git pull --prune --rebase'           # fetch + rebase
 alias gfm='git pull'                            # fetch + merge
-alias gp='git push'                             # push
-alias ga='git add'                              # add <file>
+alias gpu='git push'                            # push
+alias gad='git add'                             # add <file>
 alias gaa='git add --all'                       # add <file>
-alias gr='git restore --staged --worktree'      # restore <file>
+alias grs='git restore --staged --worktree'     # restore <file>
 alias gra='git rebase --abort'                  # rebase abort
-alias gd='git diff --minimal -U1 -w'            # diff
+alias gdi='git diff --minimal -U1 -w'           # diff
 alias gdt='git difftool -y'                     # diff tool
-alias gm='git merge'                            # merge <branch>
+alias gme='git merge'                           # merge <branch>
 alias gmt='git mergetool -y'                    # merge tool
 alias gma='git merge --abort'                   # merge abort
 alias gg='git add --all && git commit -v && git pull --prune --rebase && git push'  # Super Git Sync
 
 # mvn
 alias m='mvn'
-alias mc='mvn clean'                            # clean
+alias mcl='mvn clean'                           # clean
 alias mco='mvn -o -T 1C compile'                # compile
-alias mt='mvn test'                             # test
-alias mve='mvn verify'                          # verify
-alias mp='mvn package -U'                       # package
-alias mi='mvn clean install -P release'         # install
-alias md='mvn clean deploy -P release'          # deploy
+alias mts='mvn test'                            # test
+alias mpk='mvn package -U'                      # package
+alias mi='mvn clean install'                    # install
+alias mir='mvn clean install -P release'        # install release
 alias mvs='mvn versions:set'                    # set version (interactive)
-alias mdt='mvn dependency:tree -Dverbose'       # list dependencies
-alias mrd='mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies -DdownloadSources -DdownloadJavadoc'  # download dependencies
-alias mw='mvn -N io.takari:maven:wrapper'       # maven wrapper
+alias mde='mvn dependency:tree -Dverbose'       # list dependencies
+alias mgo='mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies -DdownloadSources -DdownloadJavadoc'  # download dependencies
+alias mwr='mvn -N io.takari:maven:wrapper'      # maven wrapper
 
 # npm
 alias n='npm'
 alias ni='npm install'
 alias nid='npm install --save-dev'
-alias ns='npm start'
-alias nt='npm test'
-alias nb='npm run build'
+alias nsta='npm start'
+alias nts='npm test'
+alias nbd='npm run build'
 
 # docker
 alias d='docker'
-alias dp='docker ps'                            # list
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'  # list
 alias dpa='docker ps -a'                        # list all
-alias dil='docker image ls'                     # list images
-alias dvl='docker volume ls'                    # list volumes
-alias dnl='docker network ls'                   # list networks
-alias dl='docker logs -fn100'                   # logs <id>
-alias dl1='docker logs -fn100 $container'       # logs $container
-alias di='docker inspect'                       # inspect <id>
-alias de='docker exec -it'                      # exec <id> <cmd>
-alias de1='docker exec -it $container'          # exec $container <cmd>
-alias ds='docker stop'                          # stop <id>
-alias ds1='docker stop $container'              # stop $container
-alias dsa='docker stop $(docker ps -q)'         # stop all
+alias dlo='docker logs -fn1000'                 # logs <id>
+alias din='docker inspect'                      # inspect <id>
+alias dex='docker exec -it'                     # exec <id> <cmd>
+alias dsto='docker stop'                        # stop <id>
+alias dstoa='docker stop $(docker ps -q)'       # stop all
 alias dru='docker run --rm -it'                 # run <img>
 alias dre='docker restart'                      # restart <id>
-alias dre1='docker restart $container'          # restart $container
 alias drm='docker rm'                           # remove <id>
-alias drm1='docker rm $container'               # remove $container
 alias drma='docker rm $(docker ps -aq)'         # remove all
-alias dirm='docker image rm'                    # remove image <img>
-alias dvrm='docker volume rm'                   # remove volume <vol>
-alias dnrm='docker network rm'                  # remove network <net>
 alias dsp='docker system prune --volumes'       # system prune
 alias dc='docker-compose'                       # compose <cmd>
 alias dcu='docker-compose up -d --build --force-recreate'  # compose up
@@ -116,8 +98,6 @@ alias ka='kubectl apply -f'                     # apply
 
 # sudo
 alias s='sudo'
-alias su='sudo su'                              # su [<user>]
-alias su1='sudo su $user'                       # su $user
 alias s1='sudo -u $user'                        # su $user do <cmd>
 alias ss='sudo service'                         # service <service> <opt>
 alias ss1='sudo service $service'               # service $service <opt>
