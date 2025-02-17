@@ -11,9 +11,9 @@ CapsLock & x::^x
 CapsLock & c::^c
 CapsLock & v::^v
 
-CapsLock & b::
-Send, curl https://raw.githubusercontent.com/Oliveiras/my-dotfiles/refs/heads/master/scripts/get-dotfiles.sh | bash
-return
+CapsLock & b:: {
+    Send "curl https://raw.githubusercontent.com/Oliveiras/my-dotfiles/refs/heads/master/scripts/get-dotfiles.sh | bash"
+}
 
 
 ;; OLD CODE

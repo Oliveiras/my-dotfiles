@@ -33,6 +33,6 @@ __git_commit() {
 
 # List only name of docker containers
 __docker_ps_names() {
-	docker ps --format '{{.Names}}'
+	docker ps -a --format '{{.Names}}'
 }
 
